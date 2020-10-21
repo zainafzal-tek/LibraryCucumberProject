@@ -7,8 +7,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginStepDefinitions {
+
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     LoginPage loginPage = new LoginPage();
 
@@ -26,6 +31,8 @@ public class LoginStepDefinitions {
     public void user_should_see_dashboard_page() {
         String expected = "http://library2.cybertekschool.com/#books";
         String actual = Driver.getDriver().getTitle();
+
+        wait.until(ExpectedConditions.titleIs(expected));
 
         Assert.assertEquals("Title is not equal", expected, actual);
         Driver.closeDriver();
