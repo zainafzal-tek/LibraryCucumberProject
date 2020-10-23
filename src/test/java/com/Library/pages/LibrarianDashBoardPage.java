@@ -1,10 +1,15 @@
 package com.Library.pages;
 
+import com.Library.utils.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LibrarianDashBoardPage extends BasePage {
+
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
     @FindBy(xpath = "//div/h6[.='Users']")
     private WebElement userHeader;
@@ -25,8 +30,13 @@ public class LibrarianDashBoardPage extends BasePage {
     private WebElement booksLink;
 
     public void verifyHeadersDisplayed() {
+        wait.until(ExpectedConditions.visibilityOf(userHeader));
         Assert.assertTrue("User header is not displayed!", userHeader.isDisplayed());
+
+        wait.until(ExpectedConditions.visibilityOf(booksHeader));
         Assert.assertTrue("Books header is not displayed!" , booksHeader.isDisplayed());
+
+        wait.until(ExpectedConditions.visibilityOf(borrowedBooksHeader));
         Assert.assertTrue("Borrowed Books header is not displayed!", borrowedBooksHeader.isDisplayed());
     }
 

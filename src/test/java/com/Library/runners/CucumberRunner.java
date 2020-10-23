@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "com/Library/step_definitions",
         dryRun = false,
-        tags = "@parametrized_test"
+        tags = "@librarian_dashboard",
+        plugin = {"pretty", "html:target/cucumber-reports.html"}
+
 )
 
 public class CucumberRunner{
