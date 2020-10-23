@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src\\test\\resources",
-        glue = "com\\Library\\step_definitions",
+        features = "src/test/resources",
+        glue = "com/Library/step_definitions",
         dryRun = false,
         tags = "@parametrized_test"
 )
