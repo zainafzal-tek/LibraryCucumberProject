@@ -1,5 +1,5 @@
 @login @smoke
-Feature: As a user I want to be able to login using different roles
+Feature: As a user I want to be able to login using different roles, and logout
 
   Background: common steps
     Given User is on landing page
@@ -16,4 +16,5 @@ Feature: As a user I want to be able to login using different roles
   Scenario: Invalid password
     When user enters invalid password
     Then user should see wrong email or password message
+
 

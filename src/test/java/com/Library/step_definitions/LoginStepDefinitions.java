@@ -34,8 +34,6 @@ public class LoginStepDefinitions {
         String actual = Driver.getDriver().getTitle();
 
         Assert.assertEquals("Title is not equal", expected, actual);
-        Driver.closeDriver();
-
     }
 
     @When("user enters invalid email")

@@ -13,6 +13,7 @@ public class DashboardStepDefinitions {
     LibrarianDashBoardPage librarianDashBoardPage = new LibrarianDashBoardPage();
     UsersPage usersPage = new UsersPage();
     BooksPage booksPage = new BooksPage();
+    LoginPage loginPage = new LoginPage();
 
     @Then("Users, Books and borrowed Books should be displayed")
     public void users_books_and_borrowed_books_should_be_displayed() {
@@ -32,6 +33,11 @@ public class DashboardStepDefinitions {
     @Then("user should see Book management page")
     public void user_should_see_book_management_page() {
         booksPage.verifyBookManagementVisible();
+    }
+
+    @And("user should be able see and click logout located under username")
+    public void user_should_be_able_see_and_click_logout_located_under_username() {
+       librarianDashBoardPage.logOut();
     }
 
 }

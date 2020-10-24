@@ -15,3 +15,8 @@ Feature: As a librarian, I want to be able to see number of users, books and bor
   Scenario: Viewing Book Management dashboard
     And user clicks on "Books" link
     Then user should see Book management page
+
+    @log_out
+  Scenario: User on dashboard wants to logout
+    Then user should see dashboard page
+    And user should be able see and click logout located under username
