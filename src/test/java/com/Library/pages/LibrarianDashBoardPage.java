@@ -27,18 +27,6 @@ public class LibrarianDashBoardPage extends BasePage {
     @FindBy(xpath = "//a/span[.='Books']")
     private WebElement booksLink;
 
-    @FindBy(xpath = "//li/a[@id = 'navbarDropdown']")
-    private WebElement userLoggedIn;
-
-    @FindBy(xpath = "//div/a[.='Log Out']")
-    private WebElement logOutButton;
-
-    public void logOut(){
-        userLoggedIn.click();
-        logOutButton.click();
-        verifyTitle();
-    }
-
     public void verifyHeadersDisplayed() {
         wait.until(ExpectedConditions.visibilityOf(userHeader));
         Assert.assertTrue("User header is not displayed!", userHeader.isDisplayed());

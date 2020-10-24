@@ -13,7 +13,6 @@ public class DashboardStepDefinitions {
     LibrarianDashBoardPage librarianDashBoardPage = new LibrarianDashBoardPage();
     UsersPage usersPage = new UsersPage();
     BooksPage booksPage = new BooksPage();
-    LoginPage loginPage = new LoginPage();
 
     @Then("Users, Books and borrowed Books should be displayed")
     public void users_books_and_borrowed_books_should_be_displayed() {

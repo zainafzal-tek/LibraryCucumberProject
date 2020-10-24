@@ -18,12 +18,35 @@ public abstract class BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
+    @FindBy(xpath = "//li/a[@id = 'navbarDropdown']")
+    private WebElement userLoggedIn;
+
+    @FindBy(xpath = "//div/a[.='Log Out']")
+    private WebElement logOutButton;
+
+    /**
+     * Uses the userLoggedIn button located
+     * clicks on it to open drop-down
+     * clicks on logout button
+     */
+    public void logOut(){
+        userLoggedIn.click();
+        logOutButton.click();
+        verifyTitle();
+    }
+
+
+    /**
+     * Asserting title to make sure after logout
+     * Page title is Login - Library landing page
+     */
     private String expectedTitle = "Login - Library";
     private String actualTitle = Driver.getDriver().getTitle();
 
     public void verifyTitle(){
         wait.until(ExpectedConditions.titleIs(expectedTitle));
         Assert.assertTrue("Title verification failed, Test failed!!!", expectedTitle.contains(actualTitle));
+
     }
 
 }
