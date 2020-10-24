@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "com/Library/step_definitions",
         dryRun = false,
-        tags = "@log_out",
+        tags = "@smoke",
         plugin = {"pretty", "html:target/cucumber-reports.html"}
 
 )
