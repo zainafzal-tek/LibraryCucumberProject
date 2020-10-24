@@ -36,8 +36,7 @@ public class LibrarianDashBoardPage extends BasePage {
     public void logOut(){
         userLoggedIn.click();
         logOutButton.click();
-        wait.until(ExpectedConditions.visibilityOf(getTitle()));
-        Assert.assertTrue("Logout failed!!!", getTitle().isDisplayed());
+        verifyTitle();
     }
 
     public void verifyHeadersDisplayed() {
