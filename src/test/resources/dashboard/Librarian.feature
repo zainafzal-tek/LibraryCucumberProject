@@ -1,4 +1,4 @@
-@librarian_dashboard
+@librarian_dashboard @smoke
 Feature: As a librarian, I want to be able to see number of users, books and borrowed books
 
   Background: librarian logging in

@@ -1,4 +1,4 @@
-@login
+@login @smoke
 Feature: As a user I want to be able to login using different roles
 
   Background: common steps
