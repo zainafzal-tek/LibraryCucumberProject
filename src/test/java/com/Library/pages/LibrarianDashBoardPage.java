@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LibrarianDashBoardPage extends BasePage {
 
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
-
     @FindBy(xpath = "//div/h6[.='Users']")
     private WebElement userHeader;
 
@@ -45,5 +43,16 @@ public class LibrarianDashBoardPage extends BasePage {
         Assert.assertTrue("Users link is not displayed!", userLink.isDisplayed());
         Assert.assertTrue("Books link is not displayed!" , booksLink.isDisplayed());
     }
+
+    public void clickLink(String linkText){
+        if (linkText.equalsIgnoreCase("users")){
+            userLink.click();
+        } else if (linkText.equalsIgnoreCase("books")){
+            booksLink.click();
+        } else {
+            dashboardLink.click();
+        }
+    }
+
 
 }
