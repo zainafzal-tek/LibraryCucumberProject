@@ -34,9 +34,4 @@ public class DashboardStepDefinitions {
         booksPage.verifyBookManagementVisible();
     }
 
-    @And("user should be able see and click logout located under username")
-    public void user_should_be_able_see_and_click_logout_located_under_username() {
-       librarianDashBoardPage.logOut();
-    }
-
 }

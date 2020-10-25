@@ -45,7 +45,7 @@ public abstract class BasePage {
 
     public void verifyTitle(){
         wait.until(ExpectedConditions.titleIs(expectedTitle));
-        Assert.assertTrue("Title verification failed, Test failed!!!", expectedTitle.contains(actualTitle));
+        Assert.assertTrue("Title verification failed, Test failed!!!", expectedTitle.contains(actualTitle.trim()));
 
     }
 
