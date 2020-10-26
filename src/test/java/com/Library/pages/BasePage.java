@@ -49,4 +49,12 @@ public abstract class BasePage {
 
     }
 
+    public void navigatesTo(String value){
+        
+    }
+
+    //TODO: Create list of elements and add all elements for table rows, loop through with for-each loop, inside a try-catch to capture,
+    //TODO: Exception thrown when reaching at end of table.
+    //TODO: Create for-each loop and use try-catch to iterate elements in table data, try catch to catch exception when table data ends.
+
 }
