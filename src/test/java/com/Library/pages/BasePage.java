@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
@@ -51,6 +52,11 @@ public abstract class BasePage {
 
     public void navigatesTo(String value){
         
+    }
+
+    public Select getSelectDropdown(WebElement element){
+        Select select = new Select(element);
+        return select;
     }
 
     //TODO: Create list of elements and add all elements for table rows, loop through with for-each loop, inside a try-catch to capture,

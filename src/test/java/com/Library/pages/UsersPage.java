@@ -30,11 +30,6 @@ public class UsersPage extends BasePage{
     @FindBy(id = "tbl_users")
     private WebElement userTable;
 
-    public Select getSelectDropdown(WebElement element){
-        Select select = new Select(element);
-        return select;
-    }
-
     public void verifyUserManagementVisible(){
         wait.until(ExpectedConditions.visibilityOf(userManagementHeader));
         Assert.assertTrue("User is not on user management page!!", userManagementHeader.isDisplayed());
