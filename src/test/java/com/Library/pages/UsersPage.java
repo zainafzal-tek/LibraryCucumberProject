@@ -2,6 +2,7 @@ package com.Library.pages;
 
 import com.Library.utils.BrowserUtils;
 import com.Library.utils.Driver;
+import com.Library.utils.GetSelectDropDowns;
 import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-public class UsersPage extends BasePage{
+public class UsersPage extends BasePage implements GetSelectDropDowns {
 
     @FindBy(xpath = "//div/h3[.='User Management']")
     private WebElement userManagementHeader;
@@ -38,8 +39,9 @@ public class UsersPage extends BasePage{
         Assert.assertTrue("User is not on user management page!!", userManagementHeader.isDisplayed());
     }
 
-    public Select getSelectDropdownOnUserPage(String dropdownName){
-        switch (dropdownName){
+    @Override
+    public Select getSelectDropDown(String dropDownName) {
+        switch (dropDownName){
             case "User Group":
                 return BrowserUtils.getSelectDropdown(userGroupSelectDropdown);
 
