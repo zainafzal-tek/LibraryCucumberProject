@@ -16,5 +16,3 @@ Feature: As a user I want to be able to login using different roles, and logout
   Scenario: Invalid password
     When user enters invalid password
     Then user should see wrong email or password message
-
-
