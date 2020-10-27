@@ -1,5 +1,5 @@
 @librarian_dashboard @smoke
-Feature: As a librarian, I want to be able to see number of users, books and borrowed books
+Feature: As a librarian, I want to be able to see number of users, books, borrowed books and edit users
 
   Background: librarian logging in
     Given User is on landing page
