@@ -38,7 +38,7 @@ public class UsersPage extends BasePage{
         Assert.assertTrue("User is not on user management page!!", userManagementHeader.isDisplayed());
     }
 
-    public Select getDropdown(String dropdownName){
+    public Select getSelectDropdownOnUserPage(String dropdownName){
         switch (dropdownName){
             case "User Group":
                 return BrowserUtils.getSelectDropdown(userGroupSelectDropdown);
