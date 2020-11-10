@@ -10,7 +10,10 @@ import org.junit.runner.RunWith;
         glue = "com/Library/step_definitions",
         dryRun = false,
         tags = "@smoke",
-        plugin = {"pretty", "html:target/cucumber-reports.html"}
+        plugin = {"html:target/cucumber-report.html",
+                "json:target/cucumber.json",
+                "rerun:target/rerun.txt",
+                "pretty"}
 
 )
 
